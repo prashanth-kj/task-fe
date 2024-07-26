@@ -1,7 +1,7 @@
 import { BrowserRouter,Routes, Route } from "react-router-dom"
 import Register from "./component/Register"
 import Login from "./component/Login"
-import Home from "./user/home.jsx"
+
 import CreateTask from "./user/CreateTask"
 import Header from "./component/Header"
 import Dashboard from './admin/Dashboard'
@@ -9,6 +9,7 @@ import Edit from './admin/Edit'
 import Create from './admin/Create'
 import Task from "./admin/Task"
 import ApproveTask from "./admin/ApproveTask"
+import Home from "./user/home"
 function App() {
   
 
