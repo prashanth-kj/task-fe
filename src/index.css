@@ -1,0 +1,18 @@
+.navbar-collapse{
+  display: flex;
+  margin: 10px;
+}
+
+.nav-items{
+  display: flex;
+  gap: 20px;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.adminblog{
+   display: flex;
+   justify-content: flex-start;
+}
