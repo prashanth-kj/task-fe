@@ -49,7 +49,6 @@ function Login() {
              </Form.Group>
         </Form>
          
-        
      </div>
   </>
 }
