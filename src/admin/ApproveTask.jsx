@@ -41,35 +41,43 @@ function ApproveTask() {
   }
 
   return (
-    <div className="d-flex justify-content-center align-items-center ">
-      <Card style={{ width: '350px', height: '300px' }}>
-        <Card.Body>
-          <Card.Title className='mt-2'>{task.title}</Card.Title>
-          <Card.Text>
-            {task.description}
-          </Card.Text>
-          <div>
-            {task.status !== "pending" && (
-              <Button 
-                variant='warning' 
-                className='w-100 p-2' 
-                onClick={() => changedStatus("pending")}
-              >
-                Mark as Pending
-              </Button>
-            )}
-            {task.status !== "completed" && (
-              <Button 
-                variant='success' 
-                className='w-100 p-2' 
-                onClick={() => changedStatus("completed")}
-              >
-                Mark as Completed
-              </Button>
-            )}
+    <div className="container ">
+          <div className=' container-fluid'>
+                    <div className='text-center mt-4'>
+                        <h2>Task</h2>
+                        <hr />
+                    </div>
+                    <div className='d-flex justify-content-center'>
+                            <Card style={{ width: '350px', height: '300px' }} className='shadow rounded-4'>
+                                <Card.Body>
+                                  <Card.Title className='mt-2'>{task.title}</Card.Title>
+                                  <Card.Text>
+                                    {task.description}
+                                  </Card.Text>
+                                  <div >
+                                    {task.status !== "pending" && (
+                                      <Button 
+                                        variant='warning' 
+                                        className='w-100 p-2' 
+                                        onClick={() => changedStatus("pending")}
+                                      >
+                                        Mark as Pending
+                                      </Button>
+                                    )}
+                                    {task.status !== "completed" && (
+                                      <Button 
+                                        variant='success' 
+                                        className='w-100 p-2' 
+                                        onClick={() => changedStatus("completed")}
+                                      >
+                                        Mark as Completed
+                                      </Button>
+                                    )}
+                                  </div>
+                                </Card.Body>
+                        </Card>
+                    </div>
           </div>
-        </Card.Body>
-      </Card>
     </div>
   );
 }

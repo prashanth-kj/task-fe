@@ -9,10 +9,11 @@ function Dashboard() {
       let [userActiveCount,setActiveCount]=useState();
       let [totalTaskCount, setTaskCount]=useState()
       let navigate= useNavigate();
+
+
      let getUsers= async()=>{
            try {
               let res= await AxiosService.get('/admin');
-              console.log(res)
                  if(res.status==200){
                       setUsers(res.data.getAllusers)
                  }
@@ -43,18 +44,24 @@ function Dashboard() {
 
     useEffect(()=>{
         getdashboardState()
-     },[])
+     },[users.length])
+
   return<>
        <div className='container'>
-               
-       <Button variant="primary" className='mt-5 mb-5' onClick={()=>navigate(`/create-user`)}>Add User</Button> 
+        <div className='d-flex justify-content-between mt-3'>
+            <h2>Total Task Count: {totalTaskCount}</h2>
+            <h2>Active User Count: {userActiveCount}</h2>
+        </div>        
+       <Button variant="primary" className='mt-5 mb-5 button-item' onClick={()=>navigate(`/create-user`)}>Add User</Button> 
         
-         <div>
-        <h1>Total Task Count: {totalTaskCount}</h1>
-        <h2>Active User Count: {userActiveCount}</h2>
-        </div>
        
-            <Table striped bordered hover>
+             
+        <div className='mb-5'>
+           <div className='text-center'>
+              <h2>User List</h2>
+              <hr />
+           </div>
+        <Table striped bordered hover responsive>
                 <thead>
                         <tr>
                         <th>#</th>
@@ -83,6 +90,8 @@ function Dashboard() {
                         }
                     </tbody>
             </Table>
+            
+        </div>     
   
        </div>
   </>
