@@ -26,17 +26,25 @@ function CreateTask() {
       }
   return <>
          <div className='container'>
-            <Form>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label className="form-label">Title</Form.Label>
-                    <Form.Control type="text" className="form-control" placeholder="enter Title"  onChange={(e)=>setTitle(e.target.value)}/>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label className="form-label">description</Form.Label>
-                    <Form.Control type="text" className="form-control" placeholder="Enter description" onChange={(e)=>setDescription(e.target.value)}/>
-                </Form.Group>
-                <Button variant="primary" className='w-100' onClick={()=>handleTask()}>Create task</Button>
-            </Form>
+             <div className='container-fluid'>
+                     <div className='text-center mt-3 mb-4'>
+                         <h2>Create your Tasks!</h2>
+                         <hr />
+                     </div>
+                    <div style={{backgroundColor:'mintcream' , padding:'30px' , borderRadius:'20px'}}>
+                        <Form>
+                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                <Form.Label className="form-label">Title</Form.Label>
+                                <Form.Control type="text" className="form-control" placeholder="enter Title"  onChange={(e)=>setTitle(e.target.value)}/>
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                <Form.Label className="form-label">Description</Form.Label>
+                                <Form.Control as="textarea" className="form-control" placeholder="Enter description" rows={3} onChange={(e)=>setDescription(e.target.value)} />
+                            </Form.Group>
+                            <Button variant="primary" className='w-100 button-items ' onClick={()=>handleTask()}>Create task</Button>
+                        </Form>
+                    </div>
+             </div>
          </div>
   
   </>

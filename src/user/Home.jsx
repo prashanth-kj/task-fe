@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import AxiosService from '../utils/Apiservice';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 function Home() {
      
 
@@ -28,7 +28,7 @@ function Home() {
     <div className='container'>
         <h1 className='text-center'>TaskList</h1>
         <hr />
-        <Button variant="primary" className='mb-5 mt-5' onClick={()=>navigate('/create-task')}>Add Task</Button>
+        <Button variant="primary" className='button-item  mb-5 mt-5 '  onClick={()=>navigate('/create-task')}>Add Task</Button>
          <div>
              
          </div>
